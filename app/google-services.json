@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "188746980800",
+    "project_id": "miaplicacion-fc609",
+    "storage_bucket": "miaplicacion-fc609.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:188746980800:android:9e06651670cef4c31b7c25",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDYLYrfA42EbyfF7lcdX9VlRl8wj6kR1FI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
