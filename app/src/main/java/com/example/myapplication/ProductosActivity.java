@@ -13,6 +13,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
+import android.content.Intent;
 import java.util.List;
 
 public class ProductosActivity extends AppCompatActivity {
@@ -72,8 +73,22 @@ public class ProductosActivity extends AppCompatActivity {
                 }
 
                 // Inicializa el adaptador encargado de renderizar las tarjetas de productos
-                adapter = new ProductoAdapter(listaProductos);
-                // Vincula el adaptador con el RecyclerView para refrescar la interfaz visual
+// Cambia la inicialización del adaptador dentro de onDataChange para enviar los parámetros individuales:
+                adapter = new ProductoAdapter(listaProductos, producto -> {
+                    // Definimos el Intent de navegación hacia la pantalla de detalle
+                    Intent intent = new Intent(ProductosActivity.this, DetalleProductoActivity.class);
+
+                    // Empaquetamos cada una de las especificaciones del producto
+                    intent.putExtra("PROD_NOMBRE", producto.isNombre());
+                    intent.putExtra("PROD_PRECIO", producto.isPrecio());
+                    intent.putExtra("PROD_STOCK", producto.isStock());
+                    intent.putExtra("PROD_DISPONIBILIDAD", producto.isDisponibilidad());
+
+                    // Iniciamos la nueva ventana de detalle
+                    startActivity(intent);
+                });
+
+// Vincula el adaptador con el RecyclerView de manera normal
                 recyclerProductos.setAdapter(adapter);
             }
 

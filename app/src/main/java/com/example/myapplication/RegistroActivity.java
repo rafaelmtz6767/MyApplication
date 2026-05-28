@@ -34,8 +34,9 @@ public class RegistroActivity extends AppCompatActivity {
                         if(task.isSuccessful()){
                             Toast.makeText(this, "Registro Exitoso", Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(RegistroActivity.this, MainActivity.class);
+                            startActivity(intent); // <- ¡ESTA LÍNEA FALTABA!
                             finish();
-                        } else {
+                        }else {
                             Toast.makeText(this, "Error: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                         }
                     });

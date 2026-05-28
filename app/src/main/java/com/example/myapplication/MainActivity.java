@@ -65,17 +65,11 @@ public class MainActivity extends AppCompatActivity {
                                 Toast.makeText(MainActivity.this, "Bienvenido", Toast.LENGTH_SHORT).show();
                                 Intent intent= new Intent(MainActivity.this, InicioActivity.class);
                                 startActivity(intent);
+                                finish(); // Es buena práctica agregar finish() aquí para que no puedan volver al login con el botón de "Atrás"
                             }else{
-                                Toast.makeText(MainActivity.this, "Bienvenido", Toast.LENGTH_SHORT).show();
-finish();
-                                Intent intent= new Intent(MainActivity.this, InicioActivity.class);
-                                startActivity(intent);
-                                finish();
+                                // CORRECCIÓN AQUÍ: Mostrar error y NO navegar
+                                Toast.makeText(MainActivity.this, "Error: Usuario o contraseña incorrectos", Toast.LENGTH_LONG).show();
                             }
-
-
-
-
                         });
 
 
